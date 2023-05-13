@@ -1,36 +1,33 @@
 .contenedor-anuncios{
+    margin: 0 4rem;
+
     @include tablet{
         @include grid(3, 2rem);
     }
-
 }
 
-.img-depa{
-    img{
-        height: 30rem;
-    }   
-}
 
 .contenedor-info{
-    padding: 0 2rem;
+    padding: 3rem 2rem;
     background-color: $gris;
 
     .precio{
         color: $verde;
-        font-size: $regular;
+        font-weight: $black;
     }
     h3{
         margin: 0;
     }
 
     ul {
+        display: flex;
         list-style: none; // Elimina los puntos de la lista
-        margin: 0;
+        margin-bottom: 1rem;
         padding: 0;
-        text-align: center;
       
         li {
-          display: inline-block;
+          display: flex;
+          align-items: center;
           margin: 0 3rem; // Agrega un margen lateral entre los elementos
           width: 4rem; // Establece un ancho fijo para los elementos
         }
