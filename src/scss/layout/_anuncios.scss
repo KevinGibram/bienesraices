@@ -1,15 +1,15 @@
-.contenedor-anuncios{
-    margin: 0 4rem;
 
-    @include tablet{
-        @include grid(3, 2rem);
+@include desktop{
+    .contenedor-anuncios{
+        margin: 0 2rem;
+        @include grid(3, 1rem);
     }
 }
-
 
 .contenedor-info{
     padding: 3rem 2rem;
     background-color: $gris;
+    
 
     .precio{
         color: $verde;
@@ -18,12 +18,12 @@
     h3{
         margin: 0;
     }
-
     ul {
         display: flex;
         list-style: none; // Elimina los puntos de la lista
         margin-bottom: 1rem;
         padding: 0;
+        
       
         li {
           display: flex;

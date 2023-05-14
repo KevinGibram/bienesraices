@@ -30,4 +30,8 @@
     text-align: center;
     padding: 1rem;
     display: $display;
+
+    &:hover{
+        background-color: darken($bg-color, 5);
+    }
 }
