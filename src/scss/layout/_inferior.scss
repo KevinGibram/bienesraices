@@ -1,0 +1,29 @@
+@include tablet{
+   .seccion-inferior {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 2rem;
+
+    h3{
+        font-weight: $black;
+    }
+   }
+
+   .blog{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+   }
+}
+
+.blog{
+    margin: 3rem;
+    h4{
+        margin-top: 0;
+        padding-top: 0;
+        color: $negro;
+    }
+    span{
+        font-weight: $black;
+    }
+}
