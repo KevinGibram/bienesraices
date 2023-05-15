@@ -1,0 +1,13 @@
+.nosotros{
+    margin: 3rem;
+    @include tablet{
+        display: grid;
+        grid-template-columns: 1fr 1fr;  
+        column-gap: 3rem;
+    }
+
+    h2{
+        margin-top: 0;
+        font-weight: $black;
+    }    
+}
