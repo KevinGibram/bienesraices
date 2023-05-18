@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     eventListener();
 
-    darkMode();
+    imgDar();
 });
 
 function imgDar(){
