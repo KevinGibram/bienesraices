@@ -1,13 +1,25 @@
 document.addEventListener('DOMContentLoaded', function(){
 
     eventListener();
+
+    darkMode();
 });
+
+function imgDar(){
+    const darkBoton = document.querySelector('.dark-mode-boton');
+
+    darkBoton.addEventListener('click', darkMode);
+}
+
+function darkMode(){
+    console.log('dark');
+}
 
 
 function eventListener(){
     const barraMenu = document.querySelector('.barra-menu');
 
-    barraMenu.addEventListener('click', navegacionResponsive)
+    barraMenu.addEventListener('click', navegacionResponsive);
 }
 
 function navegacionResponsive(){
