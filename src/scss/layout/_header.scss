@@ -7,7 +7,9 @@
 }
 
 .barra{
-    align-items: flex-end;
+    @include tablet{
+        align-items: flex-end;
+    }
 }
 .dark-mode{
     display: flex;
