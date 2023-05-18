@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function(){
 function imgDar(){
     const darkBoton = document.querySelector('.dark-mode-boton');
 
-    darkBoton.addEventListener('click', darkMode);
+    darkBoton.addEventListener('click', function(){
+        
+        document.body.classList.toggle('dark-mode');
+    });
 }
 
-function darkMode(){
-    console.log('dark');
-}
 
 
 function eventListener(){
