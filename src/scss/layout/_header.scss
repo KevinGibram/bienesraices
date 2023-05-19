@@ -7,10 +7,11 @@
 }
 
 .barra{
-
     @include tablet{
         align-items: flex-end;
+        margin: 2rem;
     }
+    
 }
 .dark-mode{
     display: flex;
@@ -24,10 +25,7 @@
 
     .dark-mode-boton{
         width: 3rem;
-
-        @include tablet{
-            margin-bottom: 2rem;
-        }
+        margin: 1rem;
     }
     
    
@@ -35,7 +33,7 @@
 
 .header{
     background-color: $grisOscuro;
-    padding: 1rem;
+    padding: 3rem;
 
     &.inicio{
         background-position: center center;
@@ -54,6 +52,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 
 
     h1 {
