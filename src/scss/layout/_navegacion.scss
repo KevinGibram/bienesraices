@@ -1,7 +1,6 @@
 .barra{
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
     align-items: center;
 
 
@@ -14,7 +13,8 @@
 .navegacion {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.2s ease-in-out, opacity 0.5s linear;
+    transition: visibility 0.3s ease-in-out, opacity 0.3s linear, height 0.5s linear;
+    height: 0;
     @include tablet{
         display: flex;
         align-items: center;
@@ -55,4 +55,5 @@
 .mostrar{
     visibility: visible;
     opacity: 1;
+    height: auto;
 }
