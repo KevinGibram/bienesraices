@@ -25,5 +25,19 @@
         }
     }
 
-    
+    .formulario{
+
+        legend,
+        label{
+            color: $gris;
+        }
+        
+        input:not([type="submit"]),
+        textarea,
+        select{
+            background-color: $grisOscuro;
+            color: $gris;
+            border: solid $grisOscuro;
+        }
+    }
 }
