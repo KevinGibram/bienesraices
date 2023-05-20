@@ -1,0 +1,20 @@
+.footer{
+    background-color: $grisOscuro;
+    padding: $separacion;
+    margin: 0;
+
+    .navegacion{
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        gap: 1rem;
+        margin-bottom: 5rem;
+    }
+    
+}
+
+.copyright{
+    color: $blanco;
+    text-align: center;
+}
+

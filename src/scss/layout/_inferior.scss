@@ -1,0 +1,42 @@
+@include tablet{
+   .seccion-inferior {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 2rem;
+   }
+
+   .blog{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+   }
+}
+
+.seccion-inferior{
+    h3{
+        font-weight: $black;
+    }
+}
+
+.blog{
+    margin: 3rem;
+    h4{
+        margin-top: 0;
+        padding-top: 0;
+
+        &::after{
+            content: '';
+            display: block;
+            width: 15rem;
+            height: .5rem;
+            background-color: $verde;
+        }
+    }  
+}
+
+.texto-entrada{
+    span{
+        font-weight: $black;
+        color: $verde;
+    }
+}
