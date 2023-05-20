@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', function(){
     imgDar();
 });
 
-function imgDar(){ //dark_mode
-    const dark = window.matchMedia('(prefer-color-schene: dark)');
+function imgDar(){ //dark_mode segun preferencias de usuario
+    const dark = window.matchMedia('(prefers-color-scheme: dark)');
+    console.log(dark.matches);
 
     if(dark.matches){
         document.body.classList.add('darkMode');
@@ -23,28 +24,22 @@ function imgDar(){ //dark_mode
     })
 }
 
+//agregar evento de dark-mode
 const darkBoton = document.querySelector('.dark-mode-boton');
 
-    darkBoton.addEventListener('click', function(){
+darkBoton.addEventListener('click', function(){
         
-        document.body.classList.toggle('darkMode');
+    document.body.classList.toggle('darkMode');
 
-        if(document.body.classList.contains('darkMode')){
-            localStorage.setItem('modo-oscuro','true');
-        } else {
-            localStorage.setItem('modo-oscuro','false');
-        }
-    });
-
-    if (localStorage.getItem('modo-oscuro') === 'true') {
-        document.body.classList.add('darkMode');
+    if(document.body.classList.contains('darkMode')){
+        localStorage.setItem('modo-oscuro','true');
     } else {
-        document.body.classList.remove('darkMode');
+        localStorage.setItem('modo-oscuro','false');
     }
+});
 
 
-
-
+//agregando evento a barra de navegacion responsive
 function eventListener(){
     const barraMenu = document.querySelector('.barra-menu');
 
