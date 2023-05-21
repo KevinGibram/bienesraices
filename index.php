@@ -1,6 +1,7 @@
 <?php
-    $inicio = true;
-    include './includes/template/header.php';
+
+    require 'includes/funciones.php';
+    incluteTemplate('header', $inicio = true);
 ?>
 
     <main class="contenedor seccion">
