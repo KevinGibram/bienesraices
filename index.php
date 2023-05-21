@@ -1,39 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raices</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
-    <header class="header inicio">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="index.html">
-                <img src="build/img/logo.svg" alt="logotipo de bienes raices">
-                </a>
-
-                <div class="barra-menu">
-                    <img src="build/img/barras.svg">
-                </div>
-
-                <div class="dark-mode">
-                    <img class="dark-mode-boton icono" src="build/img/dark-mode.svg">
-                    <nav class="navegacion">
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anuncios.html">Anuncios</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contacto.html">Contacto</a>
-                    </nav>
-                </div>
-                
-                
-            </div>
-                <h1>Venta de Casas y Apartamentos Exclusivos de Lujo</h1> 
-        </div>
-    </header>
+<?php
+    $inicio = true;
+    include './includes/template/header.php';
+?>
 
     <main class="contenedor seccion">
         <h1>Más sobre nosotros</h1>
@@ -82,7 +50,7 @@
                             <li class="icono"><img src="build/img/icono_estacionamiento.svg" alt="estacionamiento">3</li>
                             <li class="icono"><img src="build/img/icono_dormitorio.svg" alt="dormitorio">4</li>
                         </ul>
-                        <a href="anuncios.html" class="boton-amarillo-block">Ver Propiedades</a>
+                        <a href="anuncios.php" class="boton-amarillo-block">Ver Propiedades</a>
                 </div> <!-- .contenido info -->
             </div> <!-- .anuncio -->
             <div class="anuncio">
@@ -101,7 +69,7 @@
                             <li class="icono"><img src="build/img/icono_estacionamiento.svg" alt="estacionamiento">3</li>
                             <li class="icono"><img src="build/img/icono_dormitorio.svg" alt="dormitorio">4</li>
                         </ul>
-                        <a href="anuncios.html" class="boton-amarillo-block">Ver Propiedades</a>
+                        <a href="anuncios.php" class="boton-amarillo-block">Ver Propiedades</a>
                 </div> <!-- .contenido info -->
             </div> <!-- .anuncio -->
             <div class="anuncio">
@@ -120,20 +88,20 @@
                             <li class="icono"><img src="build/img/icono_estacionamiento.svg" alt="estacionamiento">3</li>
                             <li class="icono"><img src="build/img/icono_dormitorio.svg" alt="dormitorio">4</li>
                         </ul>
-                        <a href="anuncios.html" class="boton-amarillo-block">Ver Propiedades</a>
+                        <a href="anuncios.php" class="boton-amarillo-block">Ver Propiedades</a>
                 </div> <!-- .contenido info -->
             </div> <!-- .anuncio -->
         </div> <!-- .contenedor-anuncios -->
 
         <div class="alinear-derecha">
-            <a href="anuncios.html" class="boton boton-verde">Ver Propiedades</a>
+            <a href="anuncios.php" class="boton boton-verde">Ver Propiedades</a>
         </div>
     </section>
 
     <section class="imagen-contacto">
         <h2>Encuentra la casa de tus sueños</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ullam ea quod vero provident. </p>
-        <a class="boton-amarillo" href="contacto.html">Contacto</a>
+        <a class="boton-amarillo" href="contacto.php">Contacto</a>
     </section>
 
     <div class="cotenedor seccion seccion-inferior">
@@ -148,7 +116,7 @@
                     </picture>
                 </div>
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Terraza en el techo de tu casa</h4>
                         <p>Escrito por: <span>14/05/2023 </span> por: <span>Admin</span></p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium doloremque quisquam voluptate.</p>
@@ -166,7 +134,7 @@
                     </picture>
                 </div>
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Terraza en el techo de tu casa</h4>
                         <p>Escrito por: <span>14/05/2023 </span> por: <span>Admin</span></p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium doloremque quisquam voluptate.</p>
@@ -190,10 +158,10 @@
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="nosotros.php">Nosotros</a>
+                <a href="anuncios.php">Anuncios</a>
+                <a href="blog.php">Blog</a>
+                <a href="contacto.php">Contacto</a>
             </nav>
         </div>
 
