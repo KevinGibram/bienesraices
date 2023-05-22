@@ -1,7 +1,7 @@
 <?php
-    include './includes/template/header.php';
+    require 'includes/funciones.php';
+    incluteTemplate('header', $inicio = false);
 ?>
-
     <main class="contenedor seccion">
         <h3>Nuestro Blog</h3>
             <article class="blog">
@@ -78,6 +78,5 @@
     </main>
 
     <?php
-     include './includes/template/footer.php';
+     incluteTemplate('footer');
     ?>
-

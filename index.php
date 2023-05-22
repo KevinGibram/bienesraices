@@ -1,5 +1,4 @@
 <?php
-
     require 'includes/funciones.php';
     incluteTemplate('header', $inicio = true);
 ?>
@@ -157,5 +156,5 @@
     </div>
 
     <?php
-     include './includes/template/footer.php';
+     incluteTemplate('footer');
     ?>
