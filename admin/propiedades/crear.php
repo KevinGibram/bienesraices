@@ -1,6 +1,7 @@
 <?php
     require('../../includes/config/database.php');
     $db = conectarDB();
+    
 
     if($_SERVER["REQUEST_METHOD"] === 'GET'){
         echo '<pre>';
@@ -17,7 +18,7 @@
         <h1>Crear</h1>
         <a class="boton-verde" href="/admin">Volver</a>
 
-        <for class="formulario" method="GET" action="/admin/propiedades/crear.php">
+        <form class="formulario" method="GET" action="/admin/propiedades/crear.php">
             <fieldset>
                 <legend>Informacion General</legend>
 
@@ -56,7 +57,7 @@
             </fieldset>
 
             <input type="submit" value="Crear Propiedad" class="boton-verde">
-        </for>
+        </form>
     </main>
     
 <?php
