@@ -3,10 +3,32 @@
     $db = conectarDB();
     
 
-    if($_SERVER["REQUEST_METHOD"] === 'GET'){
-        echo '<pre>';
-        var_dump($_GET);
-        echo '</pre>';
+    if($_SERVER["REQUEST_METHOD"] === 'POST'){
+        // echo '<pre>';
+        // var_dump($_POST );
+        // echo '</pre>';
+
+        $titulo = $_POST['titulo'];
+        $precio =$_POST['precio'];
+        $descripcion =$_POST['descripcion'];
+        $habitaciones =$_POST['habitaciones'];
+        $wc =$_POST['wc'];
+        $estacionamientos =$_POST['estacionamientos'];
+        $vendedores_id =$_POST['vendedores_id'];
+
+
+        //insertar valores a la base de datos
+
+        $query = "INSERT INTO propiedades(titulo, precio, descripcion, habitaciones, wc, estacionamiento, vendedores_id )
+        VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamientos', '$vendedores_id')" ;
+
+        // echo $query;
+
+        $resultado = mysqli_query($db, $query);
+
+        if($resultado){
+            echo 'los datos se almacenaron correctamente';
+        }
     }
 
     require('../../includes/funciones.php');
@@ -18,7 +40,7 @@
         <h1>Crear</h1>
         <a class="boton-verde" href="/admin">Volver</a>
 
-        <form class="formulario" method="GET" action="/admin/propiedades/crear.php">
+        <form class="formulario" method="POST" action="/admin/propiedades/crear.php">
             <fieldset>
                 <legend>Informacion General</legend>
 
@@ -29,7 +51,7 @@
                 <input type="number" id="precio" name="precio" placeholder="Valor">
 
                 <label for="imagen">Imagen</label>
-                <input type="file" id="imagen" name="imagen" accept="image/jpeg, image/png">
+                <input type="file" id="imagen" name="imagen"  accept="image/jpeg, image/png">
 
                 <label for="descripcion">Descripcion:</label>
                 <textarea id="descripcion" name="descripcion"></textarea>
@@ -50,7 +72,7 @@
 
             <fieldset>
                 <legend>Vendedor</legend>
-                <select>
+                <select name="vendedores_id" >
                     <option value="1">kevin</option>
                     <option value="2">maria</option>
                 </select>
