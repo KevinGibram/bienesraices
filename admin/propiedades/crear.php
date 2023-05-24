@@ -4,6 +4,14 @@
     
     //crear array de errores
     $errores=[];
+
+    $titulo = '';
+    $precio = '';
+    $descripcion = '';
+    $habitaciones = '';
+    $wc = '';
+    $estacionamientos = '';
+    $vendedores_id = '';
     
     //guardando los datos en variables
     if($_SERVER["REQUEST_METHOD"] === 'POST'){
@@ -86,35 +94,35 @@
                 <legend>Informacion General</legend>
 
                 <label for="titulo">Titulo</label>
-                <input type="text" id="titulo" name="titulo" placeholder="Titulo">
+                <input type="text" id="titulo" name="titulo" placeholder="Titulo" value="<?php echo $titulo; ?>">
 
                 <label for="precio">Precio</label>
-                <input type="number" id="precio" name="precio" placeholder="Valor">
+                <input type="number" id="precio" name="precio" placeholder="Valor" value="<?php echo $precio; ?>">
 
                 <label for="imagen">Imagen</label>
                 <input type="file" id="imagen" name="imagen"  accept="image/jpeg, image/png">
 
                 <label for="descripcion">Descripcion:</label>
-                <textarea id="descripcion" name="descripcion"></textarea>
+                <textarea id="descripcion" name="descripcion"> <?php echo $descripcion; ?>   </textarea>
             </fieldset>
 
             <fieldset>
                 <legend>Informacion Propiedad</legend>
 
                 <label for="habitaciones">Habitaciones</label>
-                <input type="number" id="habitaciones" name="habitaciones" placeholder="ej:3" min=1 max=9>
+                <input type="number" id="habitaciones" name="habitaciones" value="<?php echo $habitaciones; ?>" placeholder="ej:3" min=1 max=9>
 
                 <label for="wc">Baños</label>
-                <input type="number" id="wc" name="wc" placeholder="ej:3" min=1 max=9>
+                <input type="number" id="wc" name="wc" value="<?php echo $wc; ?>" placeholder="ej:3" min=1 max=9>
 
                 <label for="estacionamientos">Estacionamientos</label>
-                <input type="number" id="estacionamientos" name="estacionamientos" placeholder="ej:3">
+                <input type="number" id="estacionamientos" name="estacionamientos"  value="<?php echo $estacionamientos; ?>" placeholder="ej:3">
             </fieldset>
 
             <fieldset>
                 <legend>Vendedor</legend>
-                <select name="vendedores_id" >
-                    <option>--SELECIONE UNA OPCION--</option>
+                <select name="vendedores_id"  value="<?php echo $vendedores_id; ?>">
+                    <option value="">--SELECIONE UNA OPCION--</option>
                     <option value="1">kevin</option>
                     <option value="2">maria</option>
                 </select>
