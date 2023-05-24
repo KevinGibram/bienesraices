@@ -56,7 +56,7 @@
             $resultado = mysqli_query($db, $query);
 
             if($resultado){
-                echo 'los datos se almacenaron correctamente';
+                $conectado = 'los datos se almacenaron correctamente';
             }
         }  
     }
@@ -75,6 +75,10 @@
                 <?php echo $error; ?>
             </div>
         <?php endforeach; ?>
+
+            <div class="alerta">
+                <?php echo $conectado; ?>
+            </div>
 
             
         <form class="formulario" method="POST" action="/admin/propiedades/crear.php">
