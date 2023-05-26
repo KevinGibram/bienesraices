@@ -1,6 +1,9 @@
 <?php
     require('../../includes/config/database.php');
     $db = conectarDB();
+
+    $consulta = "SELECT * FROM vendedores";
+    $conectar = mysqli_query($db, $consulta);
     
     //crear array de errores
     $errores=[];
@@ -15,9 +18,9 @@
     
     //guardando los datos en variables
     if($_SERVER["REQUEST_METHOD"] === 'POST'){
-        // echo '<pre>';
-        // var_dump($_POST );
-        // echo '</pre>';
+         echo '<pre>';
+         var_dump($_POST );
+         echo '</pre>';
 
         $titulo = $_POST['titulo'];
         $precio =$_POST['precio'];
@@ -51,7 +54,7 @@
 
         // echo '<pre>';
         // var_dump($errores);
-        // echo '</pre>';
+        // echo '</pre>
         // exit;
 
         //validando que el array de errores este vacio
@@ -121,14 +124,15 @@
 
             <fieldset>
                 <legend>Vendedor</legend>
-                <select name="vendedores_id"  value="<?php echo $vendedores_id; ?>">
+                <select name="vendedores_id">
                     <option value="">--SELECIONE UNA OPCION--</option>
-                    <option value="1">kevin</option>
-                    <option value="2">maria</option>
+                    <?php while ($row = mysqli_fetch_assoc($conectar) ) : ?>
+                        <option <?php echo $row?> value="<?php echo $row['id']; ?>"> <?php echo $row['nombre'] . " " . $row['apellido']; ?> </option>
+                    <?php endwhile; ?>
                 </select>
             </fieldset>
 
-            <input type="submit" value="Crear Propiedad" class="boton-verde">
+            <input type= "submit" value="Crear Propiedad" class="boton-verde">
         </form>
     </main>
     
