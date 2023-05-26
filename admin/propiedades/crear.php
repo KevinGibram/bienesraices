@@ -15,12 +15,14 @@
     $wc = '';
     $estacionamientos = '';
     $vendedores_id = '';
+    $creado = date('Y/m/d');
+    
     
     //guardando los datos en variables
     if($_SERVER["REQUEST_METHOD"] === 'POST'){
-         echo '<pre>';
-         var_dump($_POST );
-         echo '</pre>';
+        //  echo '<pre>';
+        //  var_dump($_POST );
+        //  echo '</pre>';
 
         $titulo = $_POST['titulo'];
         $precio =$_POST['precio'];
@@ -59,15 +61,16 @@
 
         //validando que el array de errores este vacio
         if(empty($errores)){
-            $query = "INSERT INTO propiedades(titulo, precio, descripcion, habitaciones, wc, estacionamiento, vendedores_id )
-            VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamientos', '$vendedores_id')" ;
+            $query = "INSERT INTO propiedades(titulo, precio, descripcion, habitaciones, wc, estacionamiento, creado, vendedores_id )
+            VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamientos', '$creado', '$vendedores_id')" ;
 
             // echo $query;
         //insertar valores a la base de datos
             $resultado = mysqli_query($db, $query);
 
             if($resultado){
-                $conectado = 'los datos se almacenaron correctamente';
+                //redireccionar al usuario
+                header('location: /admin');
             }
         }  
     }
@@ -127,7 +130,7 @@
                 <select name="vendedores_id">
                     <option value="">--SELECIONE UNA OPCION--</option>
                     <?php while ($row = mysqli_fetch_assoc($conectar) ) : ?>
-                        <option <?php echo $row?> value="<?php echo $row['id']; ?>"> <?php echo $row['nombre'] . " " . $row['apellido']; ?> </option>
+                        <option <?php echo $row['id'] === $vendedores_id ? 'selected' : ''; ?> value="<?php echo $row['id']; ?>"> <?php echo $row['nombre'] . " " . $row['apellido']; ?> </option>
                     <?php endwhile; ?>
                 </select>
             </fieldset>
