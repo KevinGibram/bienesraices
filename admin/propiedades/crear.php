@@ -25,13 +25,17 @@
         //  var_dump($_POST );
         //  echo '</pre>';
 
-        $titulo = $_POST['titulo'];
-        $precio =$_POST['precio'];
-        $descripcion =$_POST['descripcion'];
-        $habitaciones =$_POST['habitaciones'];
-        $wc =$_POST['wc'];
-        $estacionamientos =$_POST['estacionamientos'];
-        $vendedores_id =$_POST['vendedores_id'];
+
+
+        //sanitizar las entradas a la db
+
+        $titulo =mysqli_real_escape_string($bs,  $_POST['titulo']);
+        $precio =mysqli_real_escape_string($bs, $_POST['precio']);
+        $descripcion =mysqli_real_escape_string($bs, $_POST['descripcion']);
+        $habitaciones =mysqli_real_escape_string($bs, $_POST['habitaciones']);
+        $wc =mysqli_real_escape_string($bs, $_POST['wc']);
+        $estacionamientos =mysqli_real_escape_string($bs, $_POST['estacionamientos']);
+        $vendedores_id =mysqli_real_escape_string($bs, $_POST['vendedores_id']);
 
         if(!$titulo){
         $errores[] = 'El titulo es obligatorio';
