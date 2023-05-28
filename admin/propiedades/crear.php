@@ -14,8 +14,9 @@
     $habitaciones = '';
     $wc = '';
     $estacionamientos = '';
-    $vendedores_id = '';
     $creado = date('Y/m/d');
+    $vendedores_id = '';
+    
     
     
     //guardando los datos en variables
@@ -65,11 +66,10 @@
             VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamientos', '$creado', '$vendedores_id')" ;
 
             // echo $query;
-        //insertar valores a la base de datos
-            $resultado = mysqli_query($db, $query);
 
+            $resultado = mysqli_query($db, $query);
+            //redireccionar al usuario
             if($resultado){
-                //redireccionar al usuario
                 header('location: /admin');
             }
         }  
