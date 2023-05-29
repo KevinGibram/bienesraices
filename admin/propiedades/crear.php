@@ -21,21 +21,28 @@
     
     //guardando los datos en variables
     if($_SERVER["REQUEST_METHOD"] === 'POST'){
-        //  echo '<pre>';
-        //  var_dump($_POST );
-        //  echo '</pre>';
+    //   echo '<pre>';
+    //   var_dump($_POST );
+    //   echo '</pre>';
 
+    //   echo '<pre>';
+    //   var_dump($_FILES );
+    //   echo '</pre>';
 
+    //   exit;
 
         //sanitizar las entradas a la db
 
-        $titulo =mysqli_real_escape_string($bs,  $_POST['titulo']);
-        $precio =mysqli_real_escape_string($bs, $_POST['precio']);
-        $descripcion =mysqli_real_escape_string($bs, $_POST['descripcion']);
-        $habitaciones =mysqli_real_escape_string($bs, $_POST['habitaciones']);
-        $wc =mysqli_real_escape_string($bs, $_POST['wc']);
-        $estacionamientos =mysqli_real_escape_string($bs, $_POST['estacionamientos']);
-        $vendedores_id =mysqli_real_escape_string($bs, $_POST['vendedores_id']);
+        $titulo =mysqli_real_escape_string($db,  $_POST['titulo']);
+        $precio =mysqli_real_escape_string($db, $_POST['precio']);
+        $descripcion =mysqli_real_escape_string($db, $_POST['descripcion']);
+        $habitaciones =mysqli_real_escape_string($db, $_POST['habitaciones']);
+        $wc =mysqli_real_escape_string($db, $_POST['wc']);
+        $estacionamientos =mysqli_real_escape_string($db, $_POST['estacionamientos']);
+        $vendedores_id =mysqli_real_escape_string($db, $_POST['vendedores_id']);
+        $imagen = $_FILES['imagen'];
+
+        
 
         if(!$titulo){
         $errores[] = 'El titulo es obligatorio';
@@ -58,10 +65,20 @@
         if(!$vendedores_id){
             $errores[] = 'Seleccione un vendedor';
         }
+        if (!$imagen['name']){
+            $errores[] = 'La imagen es obligatoria';
+        }
+        //validar imagen por tamaño
+        $medidas = 1000 * 100;
+
+        if ($imagen['size'] > $medida || $imagen['error'] ){
+            $errores[] = 'La imagen es muy pesada';
+        }
+
 
         // echo '<pre>';
         // var_dump($errores);
-        // echo '</pre>
+        // echo '</pre>';
         // exit;
 
         //validando que el array de errores este vacio
@@ -99,7 +116,7 @@
             </div>
 
             
-        <form class="formulario" method="POST" action="/admin/propiedades/crear.php">
+        <form class="formulario" method="POST" action="/admin/propiedades/crear.php" enctype="multipart/form-data">
             <fieldset>
                 <legend>Informacion General</legend>
 
