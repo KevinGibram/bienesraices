@@ -47,7 +47,7 @@ $resultadoConsulta = mysqli_query($db, $query);
                     <td> $ <?php echo $propiedad['precio']; ?></td>
                     <td>
                         <a class="boton-rojo-block" href="#">Eliminar</a>
-                        <a class="boton-amarillo-block" href="#">Actualizar</a>
+                        <a class="boton-amarillo-block" href="/admin/propiedades/actualizar.php?id=<?php echo $propiedad['id']; ?>">Actualizar</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
