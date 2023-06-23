@@ -14,20 +14,30 @@
     require('../../includes/config/database.php');
     $db = conectarDB();
 
+    //Asignar datos guardados en la DB
+    $consulta = "SELECT * FROM propiedades WHERE id = $id";
+    $resultado = mysqli_query($db, $consulta);
+    $propiedad = mysqli_fetch_assoc($resultado);
+
+    // echo "<pre>";
+    // var_dump($propiedad);
+    // echo "<pre>";
+
+
     $consulta = "SELECT * FROM vendedores";
     $conectar = mysqli_query($db, $consulta);
     
     //crear array de errores
     $errores=[];
 
-    $titulo = '';
-    $precio = '';
-    $descripcion = '';
-    $habitaciones = '';
-    $wc = '';
-    $estacionamientos = '';
+    $titulo = $propiedad['titulo'];
+    $precio = $propiedad['precio'];
+    $descripcion = $propiedad['descripcion'];
+    $habitaciones = $propiedad['habitaciones'];
+    $wc = $propiedad['wc'];
+    $estacionamientos = $propiedad['estacionamiento'];
     $creado = date('Y/m/d');
-    $vendedores_id = '';
+    $vendedores_id = $propiedad['vendedores_id'];
     
     
     
