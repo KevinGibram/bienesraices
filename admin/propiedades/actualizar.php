@@ -38,6 +38,7 @@
     $estacionamientos = $propiedad['estacionamiento'];
     $creado = date('Y/m/d');
     $vendedores_id = $propiedad['vendedores_id'];
+    $imagenPropiedad = $propiedad['imagen'];
     
     
     
@@ -168,6 +169,8 @@
 
                 <label for="imagen">Imagen</label>
                 <input type="file" id="imagen" name="imagen"  accept="image/jpeg, image/png">
+
+                <img src="/imagenes/<?php echo $imagenPropiedad; ?>" class="imagen-smal">
 
                 <label for="descripcion">Descripcion:</label>
                 <textarea id="descripcion" name="descripcion"> <?php echo $descripcion; ?>   </textarea>
