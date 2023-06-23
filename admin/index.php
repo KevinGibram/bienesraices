@@ -25,6 +25,8 @@ $resultadoConsulta = mysqli_query($db, $query);
         <h1>Administrador de Bienes Raices</h1>
     <?php if($resultado === '1') : ?>
         <p class="alerta">Registrado Correctamente</p>
+    <?php elseif($resultado === '2') : ?> 
+        <p class="alerta">Actualizado Correctamente</p>
     <?php endif ?>
         <a class="boton-verde" href="/admin/propiedades/crear.php">Nueva Propiedad</a>
 
