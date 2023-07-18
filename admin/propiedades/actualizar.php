@@ -102,24 +102,37 @@
         //validando que el array de errores este vacio
         if(empty($errores)){
 
+            //Crear carpeta
+            $carpetaImagenes = '../../imagenes/';
+
+
+            if(!is_dir($carpetaImagenes)){
+                mkdir($carpetaImagenes);
+            }
+
+            $nombreImagen = '';
+
             /** SUBIDA DE ARCHIVOS */
 
-            //Crear carpeta
-            // $carpetaImagenes = '../../imagenes/';
+            if($imagen['name']){
+                //eliminar imajen previa
 
+                unlink($carpetaImagenes . $propiedad['imagen']);
 
-            // if(!is_dir($carpetaImagenes)){
-            //     mkdir($carpetaImagenes);
-            // }
+            } else{
+                $nombreImagen = $propiedad['imagen'];
+            }
+
+            
 
             // //generar nombre unico
 
-            // $nombreImagen = md5( uniqid(rand(), true)) . ".jpg";
+            $nombreImagen = md5( uniqid(rand(), true)) . ".jpg";
 
             //  //guardar imagen
-            //  move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
             
-            $query = "UPDATE propiedades SET titulo = '$titulo', precio = $precio, descripcion = '$descripcion', habitaciones = $habitaciones, wc = $wc, estacionamiento = $estacionamientos, vendedores_id = $vendedores_id WHERE id = $id"  ;
+            $query = "UPDATE propiedades SET titulo = '$titulo', precio = $precio, imagen = '$nombreImagen', descripcion = '$descripcion', habitaciones = $habitaciones, wc = $wc, estacionamiento = $estacionamientos, vendedores_id = $vendedores_id WHERE id = $id"  ;
 
             // echo $query;
 
