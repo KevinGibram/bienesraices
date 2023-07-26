@@ -119,18 +119,19 @@
 
                 unlink($carpetaImagenes . $propiedad['imagen']);
 
-            } else{
-                $nombreImagen = $propiedad['imagen'];
-            }
-
-            
-
-            // //generar nombre unico
-
+                
             $nombreImagen = md5( uniqid(rand(), true)) . ".jpg";
 
             //  //guardar imagen
             move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+            } else {
+
+                $nombreImagen = $propiedad['imagen'];
+            }
+            
+
+            // //generar nombre unico
+
             
             $query = "UPDATE propiedades SET titulo = '$titulo', precio = $precio, imagen = '$nombreImagen', descripcion = '$descripcion', habitaciones = $habitaciones, wc = $wc, estacionamiento = $estacionamientos, vendedores_id = $vendedores_id WHERE id = $id"  ;
 

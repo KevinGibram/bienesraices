@@ -1,5 +1,9 @@
 <?php
 
+echo "<pre>";
+var_dump($_POST);
+echo "</pre>";
+
 //importar la conexion
 
 require '../includes/config/database.php';
@@ -21,7 +25,7 @@ $resultadoConsulta = mysqli_query($db, $query);
     incluteTemplate('header', $inicio = false);
 ?>
 
-    <main class="contenerdor seccion">
+    <main class="seccion">
         <h1>Administrador de Bienes Raices</h1>
     <?php if($resultado === '1') : ?>
         <p class="alerta">Registrado Correctamente</p>
@@ -48,7 +52,11 @@ $resultadoConsulta = mysqli_query($db, $query);
                     <td>  <img src="/imagenes/<?php echo $propiedad['imagen']; ?> " class="imagenPropiedad"> </td>
                     <td> $ <?php echo $propiedad['precio']; ?></td>
                     <td>
-                        <a class="boton-rojo-block" href="#">Eliminar</a>
+                        <form method="POST"  class="w-100">
+                            <input type="hidden" name="id" value="<?php echo $propiedad['id']?>">
+                            <input type="submit" class="boton-rojo-block" value="Eliminar">
+                        </form>
+                        
                         <a class="boton-amarillo-block" href="/admin/propiedades/actualizar.php?id=<?php echo $propiedad['id']; ?>">Actualizar</a>
                     </td>
                 </tr>
