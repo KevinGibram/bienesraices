@@ -1,9 +1,5 @@
 <?php
 
-echo "<pre>";
-var_dump($_POST);
-echo "</pre>";
-
 //importar la conexion
 
 require '../includes/config/database.php';
@@ -20,7 +16,32 @@ $resultadoConsulta = mysqli_query($db, $query);
 //muestra mensaje condicional
 
     $resultado = $_GET['resultado'] ?? null;
+    
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $id = $_POST['id'];
+        $id = filter_var($id, FILTER_VALIDATE_INT);
 
+    }
+
+    if($id){
+        //eliminar la archivo
+         $query = "SELECT imagen FROM propiedades WHERE id = {$id}";
+
+         $resultado = mysqli_query($db, $query);
+         $propiedad = mysqli_fetch_assoc($resultado);
+
+         unlink('../imagenes/' . $propiedad['imagen']);
+
+        //eliminar la propiedad
+        $query = "DELETE FROM propiedades WHERE id = {$id}";
+
+        $resultado = mysqli_query($db, $query);
+        
+
+        if($resultado){
+            header('location: /admin');
+        }
+    }    
     require('../includes/funciones.php');
     incluteTemplate('header', $inicio = false);
 ?>
