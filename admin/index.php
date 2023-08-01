@@ -39,7 +39,7 @@ $resultadoConsulta = mysqli_query($db, $query);
         
 
         if($resultado){
-            header('location: /admin');
+            header('location: /admin?resultado=3');
         }
     }    
     require('../includes/funciones.php');
@@ -52,6 +52,8 @@ $resultadoConsulta = mysqli_query($db, $query);
         <p class="alerta">Registrado Correctamente</p>
     <?php elseif($resultado === '2') : ?> 
         <p class="alerta">Actualizado Correctamente</p>
+    <?php elseif($resultado === '3') : ?> 
+        <p class="alerta">Eliminado Correctamente</p>        
     <?php endif ?>
         <a class="boton-verde" href="/admin/propiedades/crear.php">Nueva Propiedad</a>
 
