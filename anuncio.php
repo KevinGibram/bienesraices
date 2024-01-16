@@ -7,7 +7,7 @@
         header('location: /');
     }
 
-    //importar la conexion
+//importar la conexion
 require 'includes/config/database.php';
 $db = conectarDB();
 
@@ -16,8 +16,12 @@ $query = "SELECT * FROM propiedades WHERE id = $id ";
 
 //obtener resultado
 $resultado = mysqli_query($db, $query);
-$propiedad =
- mysqli_fetch_assoc($resultado);
+
+if(!$resultado->num_rows){
+    header('location: /');
+}
+
+$propiedad = mysqli_fetch_assoc($resultado);
     require 'includes/funciones.php';
     incluteTemplate('header', $inicio = false);
 ?>
