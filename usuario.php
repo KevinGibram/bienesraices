@@ -8,8 +8,11 @@ $db = conectarDB();
 $email = "correo@correo.com";
 $password = "12345";
 
+$passwordhash = password_hash($password, PASSWORD_DEFAULT);
+
+
 //query para crear el usuario
-$query = "INSERT INTO usuarios(id, email, password) VALUES ('1', '$email', '$password')";
+$query = "INSERT INTO usuarios(id, email, password) VALUES ('2', '$email', '$passwordhash')";
 
 echo $query;
 
