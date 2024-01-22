@@ -10,7 +10,7 @@ $password = "12345";
 
 $passwordhash = password_hash($password, PASSWORD_DEFAULT);
 
-
+exit;
 //query para crear el usuario
 $query = "INSERT INTO usuarios(id, email, password) VALUES ('2', '$email', '$passwordhash')";
 
