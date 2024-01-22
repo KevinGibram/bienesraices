@@ -1,4 +1,11 @@
 <?php
+require('../../includes/funciones.php');
+$auth =estaAunticado();
+
+if(!$auth){
+    header('location:/');
+}
+
 
 require('../../includes/config/database.php');
 $auth =estaAunticado();

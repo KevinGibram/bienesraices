@@ -1,5 +1,5 @@
 <?php
-require('../includes/config/database.php');
+require('../includes/funciones.php');
 $auth =estaAunticado();
 
 if(!$auth){
@@ -7,6 +7,7 @@ if(!$auth){
 }
 
 //importar la conexion
+require('../includes/config/database.php');
 $db = conectarDB();
 
 //escribir el query
@@ -46,7 +47,7 @@ $resultadoConsulta = mysqli_query($db, $query);
             header('location: /admin?resultado=3');
         }
     }    
-    require('../includes/funciones.php');
+
     incluteTemplate('header', $inicio = false);
 ?>
 
