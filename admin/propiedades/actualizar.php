@@ -1,5 +1,12 @@
 <?php
 
+require('../../includes/config/database.php');
+$auth =estaAunticado();
+
+if(!$auth){
+    header('location:/');
+}
+
     //Validar la URL por ID valido
 
     $id = $_GET['id'];
@@ -10,8 +17,6 @@
         header('location: /admin');
     }
     
-
-    require('../../includes/config/database.php');
     $db = conectarDB();
 
     //Asignar datos guardados en la DB
@@ -145,7 +150,6 @@
         }  
     }
 
-    require('../../includes/funciones.php');
     incluteTemplate('header');
     
 ?>

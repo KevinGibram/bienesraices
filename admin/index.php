@@ -1,19 +1,12 @@
 <?php
-    session_start();
+require('../includes/config/database.php');
+$auth =estaAunticado();
 
-    //echo "<pre>";
-    //var_dump($_SESSION);
-    //echo "</pre>";
-
-    $auth = $_SESSION['login'];
-
-    if(!$auth){
-        header('location:/');
-    }
+if(!$auth){
+    header('location:/');
+}
 
 //importar la conexion
-
-require '../includes/config/database.php';
 $db = conectarDB();
 
 //escribir el query

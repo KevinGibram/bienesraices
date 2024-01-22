@@ -1,5 +1,11 @@
 <?php
     require('../../includes/config/database.php');
+    $auth =estaAunticado();
+    
+    if(!$auth){
+        header('location:/');
+    }
+
     $db = conectarDB();
 
     $consulta = "SELECT * FROM vendedores";
@@ -113,8 +119,6 @@
             }
         }  
     }
-
-    require('../../includes/funciones.php');
     incluteTemplate('header');
     
 ?>
